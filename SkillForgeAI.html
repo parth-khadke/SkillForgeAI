@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillForge AI - Master Any Skill with Validated Learning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md border-b border-gray-800 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-3xl">🎯</span>
+        <span class="text-xl font-bold">SkillForge AI</span>
+      </div>
+      <a href="auth.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition">
+        Sign In
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center px-4 pt-20">
+    <div class="max-w-4xl text-center">
+      <div class="inline-block mb-4 px-4 py-2 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm">
+        ✨ AI-Powered Learning Validation System
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Master Any Skill with
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+          Validated Progress
+        </span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+        Stop wandering through random tutorials. Get a personalized roadmap, 
+        prove your learning at each step, and build real skills with AI-guided validation.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <a href="#learn-more" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105 shadow-lg">
+          Learn How It Works
+        </a>
+        <a href="auth.html" class="border border-gray-600 hover:border-gray-400 px-8 py-4 rounded-lg font-semibold text-lg transition">
+          Start Learning Free →
+        </a>
+      </div>
+      
+      <div class="flex justify-center gap-8 text-sm text-gray-400">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          No credit card required
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          100% Free Forever
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="mt-16 animate-bounce">
+        <svg class="w-6 h-6 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement Section -->
+  <section id="learn-more" class="py-20 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">The Learning Problem</h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          You're stuck in tutorial hell, not because resources are scarce, 
+          but because you lack structure and validation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Problem Card 1 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-red-500/30 rounded-xl p-8 hover:border-red-500/60 transition">
+          <div class="text-4xl mb-4">😵</div>
+          <h3 class="text-2xl font-bold mb-3 text-red-400">No Clear Path</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Endless tutorials, articles, and courses. But where do you start? 
+            What's the right order? You're paralyzed by choice.
+          </p>
+        </div>
+
+        <!-- Problem Card 2 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-yellow-500/30 rounded-xl p-8 hover:border-yellow-500/60 transition">
+          <div class="text-4xl mb-4">🤔</div>
+          <h3 class="text-2xl font-bold mb-3 text-yellow-400">Can't Measure Progress</h3>
+          <p class="text-gray-300 leading-relaxed">
+            You finish a video or article, but did you actually learn anything? 
+            No way to know if you're ready to move forward.
+          </p>
+        </div>
+
+        <!-- Problem Card 3 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-orange-500/30 rounded-xl p-8 hover:border-orange-500/60 transition">
+          <div class="text-4xl mb-4">💔</div>
+          <h3 class="text-2xl font-bold mb-3 text-orange-400">High Dropout Rate</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Without accountability and validation, motivation fades. 
+            85% of online learners never finish what they start.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">The SkillForge Solution</h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          We don't just give you content. We guide, validate, and unlock your path 
+          to real skill mastery.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <div class="inline-block px-4 py-2 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-4">
+            🤖 AI-Powered
+          </div>
+          <h3 class="text-3xl font-bold mb-4">Personalized Roadmaps</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Tell us your goal, available time, and current level. Our AI generates 
+            a week-by-week learning plan tailored specifically to YOU—not a generic 
+            path everyone follows.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Customized to your daily time commitment (15 min to 2+ hours)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Adapts to your learning style (videos, reading, hands-on)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Clear learning objectives for every single week</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 text-gray-400">
+              <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">1</div>
+              <span>Enter: "Learn Python for Data Science"</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-400">
+              <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">2</div>
+              <span>Select: 1 hour/day, Beginner level</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-400">
+              <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">3</div>
+              <span>AI generates 12-week roadmap</span>
+            </div>
+            <div class="border-t border-gray-700 pt-4 mt-4">
+              <div class="bg-gray-900/50 rounded-lg p-4">
+                <div class="text-sm text-gray-500 mb-2">Generated Roadmap Preview:</div>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="text-green-500">✓</span>
+                    <span>Week 1: Python Basics & Syntax</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-green-500">✓</span>
+                    <span>Week 2: Data Types & Structures</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-blue-500">→</span>
+                    <span>Week 3: NumPy Fundamentals</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-gray-600">🔒</span>
+                    <span class="text-gray-600">Week 4: Pandas for Data Analysis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
+          <div class="bg-gray-900/50 rounded-lg p-6">
+            <div class="text-sm text-gray-500 mb-4">Week 3 Validation Test</div>
+            <div class="bg-gray-800 rounded-lg p-4 mb-4">
+              <div class="text-sm text-gray-400 mb-2">Question 3 of 10</div>
+              <p class="mb-3">What will this NumPy code output?</p>
+              <div class="bg-gray-900 rounded p-3 mb-3 font-mono text-sm">
+                arr = np.array([1, 2, 3])<br/>
+                print(arr * 2)
+              </div>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer hover:bg-gray-700/50 p-2 rounded">
+                  <input type="radio" name="q1" class="text-blue-600">
+                  <span>[2, 4, 6]</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer hover:bg-gray-700/50 p-2 rounded">
+                  <input type="radio" name="q1">
+                  <span>[1, 2, 3, 1, 2, 3]</span>
+                </label>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">Progress: 30%</span>
+              <button class="bg-blue-600 px-4 py-2 rounded text-sm">Next Question</button>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="inline-block px-4 py-2 bg-green-600/20 border border-green-500/30 rounded-full text-green-300 text-sm mb-4">
+            ✅ Validation System
+          </div>
+          <h3 class="text-3xl font-bold mb-4">Progressive Unlocking</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            No more skipping ahead or fooling yourself. Each week is LOCKED until 
+            you prove you've mastered the previous one through AI-generated tests, 
+            quizzes, or coding challenges.
+          </p>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Pass with 70%+ to unlock next module</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Detailed feedback on every wrong answer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Retry with easier questions if you struggle</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
+        <p class="text-xl text-gray-300">Simple, structured, and validated learning in 4 steps</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-8 text-center hover:scale-105 transition transform">
+            <div class="text-6xl mb-4">📝</div>
+            <div class="text-4xl font-bold mb-2">1</div>
+            <h3 class="text-xl font-bold mb-3">Set Your Goal</h3>
+            <p class="text-blue-100">
+              Tell us what skill you want to learn, your target, and available time
+            </p>
+          </div>
+          <!-- Arrow for desktop -->
+          <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-600 text-3xl">
+            →
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-8 text-center hover:scale-105 transition transform">
+            <div class="text-6xl mb-4">🗺️</div>
+            <div class="text-4xl font-bold mb-2">2</div>
+            <h3 class="text-xl font-bold mb-3">Get Roadmap</h3>
+            <p class="text-purple-100">
+              AI generates your personalized week-by-week learning path
+            </p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-600 text-3xl">
+            →
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div class="bg-gradient-to-br from-green-600 to-green-800 rounded-xl p-8 text-center hover:scale-105 transition transform">
+            <div class="text-6xl mb-4">📚</div>
+            <div class="text-4xl font-bold mb-2">3</div>
+            <h3 class="text-xl font-bold mb-3">Learn & Study</h3>
+            <p class="text-green-100">
+              Follow curated resources and master each week's content
+            </p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-600 text-3xl">
+            →
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div>
+          <div class="bg-gradient-to-br from-orange-600 to-orange-800 rounded-xl p-8 text-center hover:scale-105 transition transform">
+            <div class="text-6xl mb-4">✅</div>
+            <div class="text-4xl font-bold mb-2">4</div>
+            <h3 class="text-xl font-bold mb-3">Prove It</h3>
+            <p class="text-orange-100">
+              Pass validation tests to unlock the next module
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Grid -->
+  <section class="py-20 px-4 bg-gray-900/50">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Powerful Features</h2>
+        <p class="text-xl text-gray-300">Everything you need to actually master a skill</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold mb-3">Personalized Learning Paths</h3>
+          <p class="text-gray-300">
+            Every roadmap is unique to your goals, time availability, and current skill level
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-xl font-bold mb-3">Progressive Module Unlocking</h3>
+          <p class="text-gray-300">
+            Prevent yourself from skipping fundamentals—each week locks until proven
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">🧠</div>
+          <h3 class="text-xl font-bold mb-3">AI-Generated Validations</h3>
+          <p class="text-gray-300">
+            Smart quizzes and challenges tailored to what you just learned
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-3">Progress Tracking</h3>
+          <p class="text-gray-300">
+            Visualize your learning journey with detailed analytics and insights
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">💡</div>
+          <h3 class="text-xl font-bold mb-3">Intelligent Feedback</h3>
+          <p class="text-gray-300">
+            Get detailed explanations for wrong answers and targeted improvement tips
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition">
+          <div class="text-4xl mb-4">🔄</div>
+          <h3 class="text-xl font-bold mb-3">Adaptive Retry System</h3>
+          <p class="text-gray-300">
+            Failed a test? Get easier questions and targeted resources to help you improve
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <div class="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Real Learning, Real Results</h2>
+          <p class="text-gray-300">Join learners who are building actual skills, not just consuming content</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-5xl font-bold text-blue-400 mb-2">85%</div>
+            <div class="text-gray-300">Pass Rate on First Attempt</div>
+          </div>
+          <div>
+            <div class="text-5xl font-bold text-purple-400 mb-2">12</div>
+            <div class="text-gray-300">Average Weeks to Mastery</div>
+          </div>
+          <div>
+            <div class="text-5xl font-bold text-green-400 mb-2">100%</div>
+            <div class="text-gray-300">Free Forever</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="py-20 px-4 bg-gray-900/50">
+    <div class="container mx-auto max-w-5xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">SkillForge vs Traditional Learning</h2>
+      </div>
+
+      <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-900/50">
+                <th class="px-6 py-4 text-left">Feature</th>
+                <th class="px-6 py-4 text-center text-green-400">SkillForge AI</th>
+                <th class="px-6 py-4 text-center text-gray-500">Random Tutorials</th>
+                <th class="px-6 py-4 text-center text-gray-500">Online Courses</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700">
+              <tr>
+                <td class="px-6 py-4">Personalized Path</td>
+                <td class="px-6 py-4 text-center text-green-400">✓</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+                <td class="px-6 py-4 text-center text-yellow-400">~</td>
+              </tr>
+              <tr class="bg-gray-900/30">
+                <td class="px-6 py-4">Progress Validation</td>
+                <td class="px-6 py-4 text-center text-green-400">✓</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+                <td class="px-6 py-4 text-center text-yellow-400">~</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4">Locks Until Ready</td>
+                <td class="px-6 py-4 text-center text-green-400">✓</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+              </tr>
+              <tr class="bg-gray-900/30">
+                <td class="px-6 py-4">AI-Generated Tests</td>
+                <td class="px-6 py-4 text-center text-green-400">✓</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+                <td class="px-6 py-4 text-center text-red-400">✗</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4">Adaptive Difficulty</td>
+                <td class="px-6 py-4 text-center text-green-400">✓</td>
+                <td class="px-6 py-4 text -center text-red-400">✗</td>
+<td class="px-6 py-4 text-center text-red-400">✗</td>
+</tr>
+<tr class="bg-gray-900/30">
+<td class="px-6 py-4">Cost</td>
+<td class="px-6 py-4 text-center text-green-400 font-bold">FREE</td>
+<td class="px-6 py-4 text-center">Free</td>
+<td class="px-6 py-4 text-center text-red-400">$$$</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto max-w-3xl">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+<div class="space-y-4">
+    <!-- FAQ Item 1 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">How is this different from just watching YouTube tutorials?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        YouTube tutorials are great, but they lack structure and validation. SkillForge AI gives you a clear roadmap, 
+        ensures you master fundamentals before advancing, and validates your learning through tests—no more 
+        tutorial hell where you watch endlessly without building real skills.
+      </p>
+    </details>
+
+    <!-- FAQ Item 2 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">Is this really free? What's the catch?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Yes, 100% free. This is a college project built to solve a real problem in online education. 
+        No hidden fees, no credit card required, no premium tiers. We use free AI APIs (Google Gemini) 
+        to keep costs zero.
+      </p>
+    </details>
+
+    <!-- FAQ Item 3 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">What skills can I learn?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Any skill you can describe! Programming (Python, JavaScript, Java), web development, data science, 
+        design, digital marketing, language learning—if you can name it, our AI can create a roadmap for it.
+      </p>
+    </details>
+
+    <!-- FAQ Item 4 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">How long does it take to complete a skill?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        It depends on your daily time commitment and the skill complexity. Most roadmaps range from 8-16 weeks. 
+        If you dedicate 1-2 hours daily, you can master most skills in about 12 weeks.
+      </p>
+    </details>
+
+    <!-- FAQ Item 5 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">What if I fail a validation test?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        No problem! You'll get detailed feedback on what you got wrong, targeted resources to review, 
+        and a retry test that's slightly easier after a 1-hour cooldown. The goal is to ensure you 
+        actually learn, not to gatekeep.
+      </p>
+    </details>
+
+    <!-- FAQ Item 6 -->
+    <details class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer hover:border-blue-500/50 transition">
+      <summary class="font-semibold text-lg">Can I learn multiple skills at once?</summary>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        In the current version, you can have one active roadmap at a time to maintain focus. 
+        Once you complete it, you can start a new one. Future versions may support multiple concurrent roadmaps.
+      </p>
+    </details>
+  </div>
+</div>
+</section>
+  <!-- Final CTA Section -->
+  <section class="py-32 px-4">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h2 class="text-5xl md:text-6xl font-bold mb-6">
+        Ready to Stop Wasting Time?
+      </h2>
+      <p class="text-2xl text-gray-300 mb-12 leading-relaxed">
+        Join learners who are building real, validated skills with structured guidance. 
+        No more tutorial hell. No more guessing if you're ready to move forward.
+      </p>
+<a href="auth.html" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-6 rounded-xl font-bold text-2xl transition transform hover:scale-105 shadow-2xl">
+    Start Learning for Free →
+  </a>
+  
+  <p class="mt-6 text-gray-400">
+    No credit card • No commitments • 100% Free Forever
+  </p>
+
+  <div class="mt-16 pt-16 border-t border-gray-800">
+    <p class="text-gray-500 text-sm">
+      Built with ❤️ as a college project to solve real learning problems
+    </p>
+    <div class="flex justify-center gap-6 mt-4 text-gray-400">
+      <a href="https://github.com/yourusername/skillpath-ai" class="hover:text-white transition">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="#" class="hover:text-white transition">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTop" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+  <script src="app.js"></script>
+</body>
+</html>
