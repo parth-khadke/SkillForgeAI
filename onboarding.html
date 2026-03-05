@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started - SkillForge AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body class="onboarding-body">
+
+  <!-- Top Navigation -->
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚒️</span>
+        <span class="logo-text">Skill<span class="brand-highlight">Forge</span> AI</span>
+      </a>
+
+      <!-- Right side -->
+      <div class="nav-right">
+
+        <!-- Help Button -->
+        <div class="help-wrapper">
+          <button class="help-btn" id="helpBtn" aria-label="Help">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="help-dropdown hidden" id="helpDropdown">
+            <a href="help.html" class="help-dropdown-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Help
+            </a>
+            <a href="mailto:parthkhadke720@gmail.com" class="help-dropdown-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <!-- User Avatar + Name -->
+        <a href="dashboard.html" class="user-pill" id="userPill">
+          <div class="user-avatar" id="userAvatar">?</div>
+          <span class="user-name" id="userName">Loading...</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="onboarding-main">
+
+    <!-- Onboarding Card -->
+    <div class="onboarding-card" id="onboardingCard">
+
+      <!-- Progress Bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">Step 1 of 6</div>
+
+      <!-- Steps Container -->
+      <div class="steps-wrapper" id="stepsWrapper">
+
+        <!-- STEP 1: Skill -->
+        <div class="step-content active" id="step1">
+          <div class="step-emoji">🎯</div>
+          <h2 class="step-title">What skill do you want to master?</h2>
+          <p class="step-desc">Be specific — the more detail, the better your roadmap</p>
+          <input
+            type="text"
+            id="skillInput"
+            class="step-input"
+            placeholder="e.g. Python, Web Development, Data Science..."
+            autocomplete="off"
+          />
+          <div class="input-error hidden" id="skillError">Please enter a skill to continue.</div>
+        </div>
+
+        <!-- STEP 2: Goal -->
+        <div class="step-content" id="step2">
+          <div class="step-emoji">🏆</div>
+          <h2 class="step-title">What's your goal with this skill?</h2>
+          <p class="step-desc">This shapes the direction and focus of your entire roadmap</p>
+          <input
+            type="text"
+            id="goalInput"
+            class="step-input"
+            placeholder="e.g. Build Android apps, Get a data science job, Contribute to open source..."
+            autocomplete="off"
+          />
+          <div class="input-error hidden" id="goalError">Please enter your goal to continue.</div>
+        </div>
+
+        <!-- STEP 3: Level -->
+        <div class="step-content" id="step3">
+          <div class="step-emoji">📊</div>
+          <h2 class="step-title">How familiar are you with this skill?</h2>
+          <p class="step-desc">This helps us calibrate where your roadmap starts</p>
+          <div class="level-grid">
+            <div class="level-card" data-value="beginner">
+              <span class="level-icon">🌱</span>
+              <span class="level-name">Beginner</span>
+              <span class="level-desc">Starting from zero</span>
+            </div>
+            <div class="level-card" data-value="intermediate">
+              <span class="level-icon">⚡</span>
+              <span class="level-name">Intermediate</span>
+              <span class="level-desc">Know the basics</span>
+            </div>
+            <div class="level-card" data-value="advanced">
+              <span class="level-icon">🚀</span>
+              <span class="level-name">Advanced</span>
+              <span class="level-desc">Want to go deeper</span>
+            </div>
+          </div>
+          <div class="input-error hidden" id="levelError">Please select your level.</div>
+        </div>
+
+        <!-- STEP 4: Daily Time -->
+        <div class="step-content" id="step4">
+          <div class="step-emoji">⏱️</div>
+          <h2 class="step-title">How much time can you commit daily?</h2>
+          <p class="step-desc">Honest answers give you a realistic, achievable roadmap</p>
+          <div class="pill-group">
+            <button class="time-pill" data-value="30min">30 min</button>
+            <button class="time-pill" data-value="1hr">1 hour</button>
+            <button class="time-pill" data-value="1.5hr">1.5 hours</button>
+            <button class="time-pill" data-value="2hr+">2+ hours</button>
+          </div>
+          <div class="input-error hidden" id="timeError">Please select your daily time.</div>
+        </div>
+
+        <!-- STEP 5: Resources -->
+        <div class="step-content" id="step5">
+          <div class="step-emoji">📚</div>
+          <h2 class="step-title">How do you learn best?</h2>
+          <p class="step-desc">Select all that apply — your roadmap will include these resource types</p>
+          <div class="resource-grid">
+            <div class="resource-card" data-value="youtube">
+              <span class="resource-icon">📺</span>
+              <span class="resource-name">YouTube Videos</span>
+              <span class="resource-desc">Visual, watch-and-follow</span>
+            </div>
+            <div class="resource-card" data-value="projects">
+              <span class="resource-icon">🛠️</span>
+              <span class="resource-name">Hands-on Projects</span>
+              <span class="resource-desc">Learn by building</span>
+            </div>
+            <div class="resource-card" data-value="books">
+              <span class="resource-icon">📖</span>
+              <span class="resource-name">Books / PDFs</span>
+              <span class="resource-desc">Deep, structured reading</span>
+            </div>
+            <div class="resource-card" data-value="courses">
+              <span class="resource-icon">🎓</span>
+              <span class="resource-name">Courses</span>
+              <span class="resource-desc">Structured curriculum</span>
+            </div>
+          </div>
+          <div class="input-error hidden" id="resourceError">Please select at least one resource type.</div>
+        </div>
+
+        <!-- STEP 6: Review -->
+        <div class="step-content" id="step6">
+          <div class="step-emoji">✅</div>
+          <h2 class="step-title">Looks good?</h2>
+          <p class="step-desc">Review your details before we generate your roadmap</p>
+          <div class="review-list">
+            <div class="review-row">
+              <span class="review-label">🎯 Skill</span>
+              <span class="review-value" id="reviewSkill">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-label">🏆 Goal</span>
+              <span class="review-value" id="reviewGoal">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-label">📊 Level</span>
+              <span class="review-value" id="reviewLevel">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-label">⏱️ Daily Time</span>
+              <span class="review-value" id="reviewTime">—</span>
+            </div>
+            <div class="review-row">
+              <span class="review-label">📚 Resources</span>
+              <span class="review-value" id="reviewResources">—</span>
+            </div>
+          </div>
+          <p class="review-hint">Use the ← Back button to change anything</p>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <button class="btn-back" id="btnBack">← Back</button>
+        <button class="btn-next" id="btnNext">Next →</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/onboarding.js"></script>
+</body>
+</html>
