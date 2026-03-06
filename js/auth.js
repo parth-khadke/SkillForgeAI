@@ -100,9 +100,11 @@ function setupPasswordToggles() {
 function setupForms() {
   const loginForm = document.getElementById('loginForm');
   const signupForm = document.getElementById('signupForm');
+  const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
   
   loginForm.addEventListener('submit', handleLogin);
   signupForm.addEventListener('submit', handleSignup);
+  forgotPasswordBtn.addEventListener('click', handleForgotPassword);
   
   // Add real-time password match validation
   setupPasswordMatchValidation();
@@ -115,7 +117,7 @@ function setupForms() {
 async function handleLogin(e) {
   e.preventDefault();
   
-  const email = document.getElementById('loginEmail').value.trim();
+  const email = document.getElementById('loginEmail').value.trim().toLowerCase();
   const password = document.getElementById('loginPassword').value;
   const rememberMe = document.getElementById('rememberMe').checked;
   
@@ -165,7 +167,7 @@ async function handleSignup(e) {
   e.preventDefault();
   
   const name = document.getElementById('signupName').value.trim();
-  const email = document.getElementById('signupEmail').value.trim();
+  const email = document.getElementById('signupEmail').value.trim().toLowerCase();
   const password = document.getElementById('signupPassword').value;
   const passwordConfirm = document.getElementById('signupPasswordConfirm').value;
   const agreeTerms = document.getElementById('agreeTerms').checked;
@@ -296,13 +298,29 @@ function hideAlert() {
   alertBox.classList.add('hidden');
 }
 
+function handleForgotPassword() {
+  showAlert('Password reset is not available in this demo version yet.', 'error');
+}
+
 // =================================
 // LOCALSTORAGE HELPERS
 // =================================
 
+function parseStoredJSON(storage, key, fallback) {
+  const raw = storage.getItem(key);
+  if (!raw) return fallback;
+
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    console.warn(`Invalid JSON in ${key}. Resetting it.`, error);
+    storage.removeItem(key);
+    return fallback;
+  }
+}
+
 function getUsers() {
-  const usersJSON = localStorage.getItem('skillforge_users');
-  return usersJSON ? JSON.parse(usersJSON) : [];
+  return parseStoredJSON(localStorage, 'skillforge_users', []);
 }
 
 function saveUsers(users) {
@@ -310,22 +328,27 @@ function saveUsers(users) {
 }
 
 function getCurrentUser() {
-  const userJSON = localStorage.getItem('skillforge_current_user');
-  return userJSON ? JSON.parse(userJSON) : null;
+  const sessionUser = parseStoredJSON(sessionStorage, 'skillforge_current_user', null);
+  if (sessionUser) return sessionUser;
+  return parseStoredJSON(localStorage, 'skillforge_current_user', null);
 }
 
 function setCurrentUser(user, remember) {
-  // Store in localStorage (persists even after browser close)
-  localStorage.setItem('skillforge_current_user', JSON.stringify(user));
-  
-  // If "remember me" is checked, also store in sessionStorage
+  // "Remember me" controls whether auth persists across browser sessions.
   if (remember) {
+    localStorage.setItem('skillforge_current_user', JSON.stringify(user));
+    sessionStorage.removeItem('skillforge_current_user');
     sessionStorage.setItem('skillforge_remember', 'true');
+  } else {
+    sessionStorage.setItem('skillforge_current_user', JSON.stringify(user));
+    localStorage.removeItem('skillforge_current_user');
+    sessionStorage.removeItem('skillforge_remember');
   }
 }
 
 function logout() {
   localStorage.removeItem('skillforge_current_user');
+  sessionStorage.removeItem('skillforge_current_user');
   sessionStorage.removeItem('skillforge_remember');
   window.location.href = 'index.html';
 }
@@ -390,10 +413,6 @@ function setupPasswordMatchValidation() {
     }
   });
 }
-
-// Export logout function for use in other pages
-window.logout = logout;
-window.getCurrentUser = getCurrentUser;
 
 // Export logout function for use in other pages
 window.logout = logout;

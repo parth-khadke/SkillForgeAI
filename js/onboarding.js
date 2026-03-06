@@ -361,11 +361,16 @@ function finishOnboarding() {
 
   // Save to localStorage
   const currentUser = getCurrentUser();
+  const isSessionUser = !!sessionStorage.getItem('skillforge_current_user');
   currentUser.hasCompletedOnboarding = true;
   currentUser.onboardingData = onboardingData;
 
-  // Update user in storage
-  localStorage.setItem('skillforge_current_user', JSON.stringify(currentUser));
+  // Update user in current session storage mode
+  if (isSessionUser) {
+    sessionStorage.setItem('skillforge_current_user', JSON.stringify(currentUser));
+  } else {
+    localStorage.setItem('skillforge_current_user', JSON.stringify(currentUser));
+  }
 
   // Also update in users array
   const users = getUsers();
@@ -403,11 +408,24 @@ function finishOnboarding() {
 // =================================
 
 function getCurrentUser() {
-  const userJSON = localStorage.getItem('skillforge_current_user');
-  return userJSON ? JSON.parse(userJSON) : null;
+  const sessionUser = parseStoredJSON(sessionStorage, 'skillforge_current_user', null);
+  if (sessionUser) return sessionUser;
+  return parseStoredJSON(localStorage, 'skillforge_current_user', null);
 }
 
 function getUsers() {
-  const usersJSON = localStorage.getItem('skillforge_users');
-  return usersJSON ? JSON.parse(usersJSON) : [];
+  return parseStoredJSON(localStorage, 'skillforge_users', []);
+}
+
+function parseStoredJSON(storage, key, fallback) {
+  const raw = storage.getItem(key);
+  if (!raw) return fallback;
+
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    console.warn(`Invalid JSON in ${key}. Resetting it.`, error);
+    storage.removeItem(key);
+    return fallback;
+  }
 }
