@@ -389,6 +389,7 @@ function finishOnboarding() {
     level: state.level,
     dailyTime: state.dailyTime,
     resources: state.resources,
+    totalWeeks: 12,
     status: 'generating',
     createdAt: new Date().toISOString(),
     modules: []

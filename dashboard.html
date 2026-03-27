@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - SkillForge AI</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-shell">
+    <header class="dashboard-topbar">
+      <a href="index.html" class="dashboard-brand">SkillForge AI</a>
+
+      <div class="dashboard-actions">
+        <div class="user-pill" aria-live="polite">
+          <div class="user-avatar" id="userAvatar">?</div>
+          <div class="user-copy">
+            <span class="user-label">Signed in as</span>
+            <span class="user-name" id="userName">Loading...</span>
+          </div>
+        </div>
+
+        <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="dashboard-hero">
+        <p class="hero-eyebrow">Personalized Weekly Roadmap</p>
+        <h1 class="hero-title" id="heroTitle">Building your roadmap...</h1>
+        <p class="hero-subtitle" id="heroSubtitle">
+          We are turning your goal into a 12-week learning plan with weekly checklists and validation tests.
+        </p>
+      </section>
+
+      <section class="status-panel" id="statusPanel">
+        <div class="status-orb" aria-hidden="true"></div>
+        <div class="status-copy-block">
+          <p class="status-title" id="statusTitle">Generating your weekly roadmap</p>
+          <p class="status-copy" id="statusCopy">
+            We are creating a structured sequence of weekly modules based on your onboarding answers.
+          </p>
+        </div>
+      </section>
+
+      <section class="roadmap-wrap hidden" id="roadmapWrap">
+        <article class="roadmap-overview">
+          <div class="overview-top">
+            <div class="badge-row">
+              <span class="source-badge" id="roadmapSource">Gemini live</span>
+              <span class="stamp-badge" id="generatedStamp">Just now</span>
+            </div>
+
+            <button type="button" class="refresh-btn" id="refreshRoadmapBtn">Generate again</button>
+          </div>
+
+          <div class="card-headline">
+            <p class="card-kicker">Your selected skill</p>
+            <h2 class="card-title" id="skillTitle">-</h2>
+            <p class="goal-line" id="goalLine">-</p>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-chip">
+              <span class="meta-label">Level</span>
+              <strong class="meta-value" id="skillLevel">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Daily time</span>
+              <strong class="meta-value" id="dailyCommitment">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Preferred resources</span>
+              <strong class="meta-value" id="preferredResources">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Progress</span>
+              <strong class="meta-value" id="progressValue">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Current week</span>
+              <strong class="meta-value" id="currentWeekValue">-</strong>
+            </div>
+          </div>
+
+          <div class="overview-grid">
+            <section class="info-block info-block--wide">
+              <h3 class="info-title">Roadmap strategy</h3>
+              <p class="info-copy" id="skillSummary">-</p>
+            </section>
+
+            <section class="info-block">
+              <h3 class="info-title">Why this matters</h3>
+              <p class="info-copy" id="whyItMatters">-</p>
+            </section>
+
+            <section class="info-block">
+              <h3 class="info-title">12-week milestone</h3>
+              <p class="info-copy" id="milestone">-</p>
+            </section>
+          </div>
+        </article>
+
+        <section class="modules-section">
+          <div class="modules-head">
+            <div>
+              <p class="section-kicker">Weekly modules</p>
+              <h2 class="section-title">One roadmap, one week at a time</h2>
+              <p class="section-copy">
+                Week 1 starts open. Future weeks stay visible, but their checklist, resources, and tests unlock progressively.
+              </p>
+            </div>
+          </div>
+
+          <div class="module-list" id="moduleList"></div>
+        </section>
+      </section>
+
+      <section class="error-panel hidden" id="errorPanel">
+        <h2 class="error-title">We could not build the roadmap.</h2>
+        <p class="error-copy" id="errorMessage">Try again in a moment.</p>
+        <button type="button" class="refresh-btn" id="retryBtn">Try again</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/roadmap-generator.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

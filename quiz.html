@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Quiz - SkillForge AI</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="quiz-body">
+  <div class="quiz-shell">
+    <header class="quiz-topbar">
+      <a href="dashboard.html" class="quiz-brand">SkillForge AI</a>
+
+      <div class="quiz-actions">
+        <a href="dashboard.html" class="back-btn">Back to roadmap</a>
+
+        <div class="user-pill" aria-live="polite">
+          <div class="user-avatar" id="userAvatar">?</div>
+          <div class="user-copy">
+            <span class="user-label">Signed in as</span>
+            <span class="user-name" id="userName">Loading...</span>
+          </div>
+        </div>
+
+        <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main class="quiz-main">
+      <section class="quiz-hero">
+        <p class="hero-eyebrow">Weekly Validation</p>
+        <h1 class="hero-title" id="quizHeroTitle">Preparing your quiz...</h1>
+        <p class="hero-subtitle" id="quizHeroSubtitle">
+          We generate quizzes only when you open them so the roadmap loads faster and API usage stays efficient.
+        </p>
+      </section>
+
+      <section class="status-panel" id="statusPanel">
+        <div class="status-orb" aria-hidden="true"></div>
+        <div class="status-copy-block">
+          <p class="status-title" id="statusTitle">Generating your weekly quiz</p>
+          <p class="status-copy" id="statusCopy">
+            We are building a short validation test for this module based on your current roadmap.
+          </p>
+        </div>
+      </section>
+
+      <section class="quiz-wrap hidden" id="quizWrap">
+        <article class="quiz-overview">
+          <div class="overview-top">
+            <div class="badge-row">
+              <span class="source-badge" id="quizSource">Gemini live</span>
+              <span class="stamp-badge" id="generatedStamp">Just now</span>
+            </div>
+
+            <button type="button" class="refresh-btn" id="regenQuizBtn">Generate again</button>
+          </div>
+
+          <div class="card-headline">
+            <p class="card-kicker" id="quizWeekLabel">Week 1 validation</p>
+            <h2 class="card-title" id="quizTitle">-</h2>
+            <p class="goal-line" id="quizDescription">-</p>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-chip">
+              <span class="meta-label">Passing score</span>
+              <strong class="meta-value" id="passingScoreValue">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Attempts</span>
+              <strong class="meta-value" id="attemptsValue">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Best score</span>
+              <strong class="meta-value" id="bestScoreValue">-</strong>
+            </div>
+
+            <div class="meta-chip">
+              <span class="meta-label">Module status</span>
+              <strong class="meta-value" id="moduleStatusValue">-</strong>
+            </div>
+          </div>
+        </article>
+
+        <form class="quiz-form" id="quizForm">
+          <div class="question-list" id="questionList"></div>
+
+          <div class="quiz-form-footer">
+            <p class="helper-copy" id="quizHelperCopy">
+              Answer all questions, then submit. Passing this quiz unlocks the next week.
+            </p>
+
+            <div class="form-actions">
+              <a href="dashboard.html" class="ghost-link">Back to roadmap</a>
+              <button type="submit" class="submit-btn" id="submitQuizBtn">Submit quiz</button>
+            </div>
+          </div>
+        </form>
+
+        <section class="result-panel hidden" id="resultPanel">
+          <h3 class="result-title" id="resultTitle">-</h3>
+          <p class="result-copy" id="resultCopy">-</p>
+
+          <div class="result-actions">
+            <button type="button" class="refresh-btn" id="retrySameQuizBtn">Try again</button>
+            <a href="dashboard.html" class="submit-btn result-link">Return to roadmap</a>
+          </div>
+        </section>
+      </section>
+
+      <section class="error-panel hidden" id="errorPanel">
+        <h2 class="error-title">We could not prepare the quiz.</h2>
+        <p class="error-copy" id="errorMessage">Try again in a moment.</p>
+        <button type="button" class="refresh-btn" id="retryBtn">Try again</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/roadmap-generator.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

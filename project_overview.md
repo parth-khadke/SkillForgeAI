@@ -1,293 +1,150 @@
 ### SkillForge AI - BCA Final Semester Project
 
 ## Project Summary
-An AI-powered learning roadmap generator with progressive validation system. Users create personalized learning paths, unlock modules by passing validation tests, and track their skill acquisition journey.
+SkillForge AI is a frontend prototype of an AI-powered learning roadmap platform. The product is designed to help users avoid random learning paths by generating a structured 12-week roadmap, tracking weekly progress, and unlocking the next module only after passing a validation quiz.
 
-## Project Status
-- Phase: Development (Week 1 of 4)
-- Completion: ~25%
-- Demo Date: 26 March 2026
-- Current Focus: Building a complete MVP for college demo and real world use to check PMF for future financial escalation.
+## Final Submission Status
+- Submission stage: Final college project submission
+- Submission date: 27 March 2026
+- Current state: Submitted as-is
+- Overall status: Working frontend MVP / prototype
+- Delivery scope: End-to-end browser flow from signup to roadmap progression and weekly quiz validation
+- Live demo: https://parth-khadke.github.io/SkillForgeAI/
 
-## Tech Stack
+## What Is Implemented
+- Landing page with project concept and product messaging
+- Login and signup flow using localStorage
+- Password validation with basic rules
+- Multi-step onboarding flow for skill, goal, level, time commitment, and preferred resources
+- 12-week roadmap generation based on onboarding inputs
+- Gemini API integration for roadmap and quiz generation
+- Automatic fallback roadmap and quiz data when live AI generation fails
+- Dashboard with weekly module cards
+- Sequential module unlocking
+- Weekly checklist progress tracking
+- Quiz page for weekly validation
+- Quiz scoring with pass/fail logic
+- Persistent user and roadmap state in localStorage
+- Frontend deployment on GitHub Pages
 
-# Frontend
-- HTML5 (semantic structure)
-- CSS3 (custom styling + Tailwind CDN)
-- Vanilla JavaScript (ES6+)
-- No frameworks/libraries (project requirement)
-
-# Backend (Phase 2 - Not Yet Implemented)
-- Node.js v18+
-- Express.js
-- SQLite (development) → PostgreSQL (production)
+## What Is Not Implemented
+- Backend server
+- Database integration
 - JWT authentication
+- Secure password hashing
+- Cross-device sync
+- Progress analytics such as charts, streaks, or time tracking
+- Separate module detail page
+- Advanced adaptive retry flow with easier regenerated questions
+- Production-grade security and deployment architecture
 
-# AI Integration
-- Primary: Google Gemini API 
-- Backup: Groq API (Llama 3.1)
-- Fallback: Hardcoded realistic fake data
+## Current Tech Stack
 
-# Storage
-- Current: localStorage (demo/prototype)
-- Future: Backend database + JWT sessions. 
+### Frontend
+- HTML5
+- CSS3
+- Tailwind CSS via CDN
+- Vanilla JavaScript
 
-# Deployment
-- Frontend: GitHub Pages
-- Live URL: 
-- Local Dev: Live Server (http://127.0.0.1:5500)
-- Mobile Testing: ngrok tunnel
+### AI Layer
+- Google Gemini API
+- Fallback hardcoded roadmap and quiz generation for demo continuity
 
-## File Structure
+### Storage
+- Browser localStorage
+
+### Deployment
+- GitHub Pages
+
+## Current File Structure
+```text
+SkillForgeAI/
+|-- index.html
+|-- auth.html
+|-- onboarding.html
+|-- dashboard.html
+|-- quiz.html
+|-- project_overview.md
+|-- README.md
+|-- css/
+|   |-- index.css
+|   |-- animation.css
+|   |-- auth.css
+|   |-- onboarding.css
+|   |-- dashboard.css
+|   `-- quiz.css
+`-- js/
+    |-- app.js
+    |-- auth.js
+    |-- onboarding.js
+    |-- dashboard.js
+    |-- quiz.js
+    `-- roadmap-generator.js
 ```
-frontend/
-├── index.html              # Landing page (COMPLETE ✅)
-├── auth.html               # Login/Signup (COMPLETE ✅)
-├── onboarding.html         # Skill selection (COMPLETE ✅)
-├── dashboard.html          # Roadmap display (PLANNED ⏳)
-├── module.html             # Individual week view (PLANNED ⏳)
-├── quiz.html               # Validation tests (PLANNED ⏳)
-├── css/
-│   ├── index.css           # Main styles + landing page
-│   ├── animation.css       # Keyframe animations
-│   ├── auth.css            # Authentication page styles
-│   └── onboarding.css      # Onboarding styles
-└── js/
-    ├── app.js              # Landing page interactions
-    ├── auth.js             # Authentication logic + localStorage
-    └── onboarding.js       # Onboarding flow 
 
-backend/ (Future)
-├── server.js
-├── routes/
-├── middleware/
-└── config/
-```
+## Feature Status Snapshot
 
-## Features Roadmap
+### Completed
+- Landing page
+- Authentication UI and logic
+- Onboarding flow
+- AI and fallback roadmap generation
+- Dashboard roadmap rendering
+- Module checklist system
+- Progressive unlocking
+- Weekly quiz generation and evaluation
+- Local persistence
+- GitHub Pages deployment
 
-# Phase 1: Core MVP (Week 1) 🚧
-- [x] Landing page with project info
-- [x] User authentication (localStorage)
-- [x] Password validation (8+ chars, 1 number, 1 special char)
-- [x] Login/signup with proper error handling
-- [x] Multi-step onboarding flow (6 steps)
-- [ ] AI roadmap generation (Gemini/Groq)
-- [ ] Dashboard with module cards
-- [ ] Progressive module unlocking system
-- [ ] One skill roadmap should be completely available for users
+### Partial / Demo-Only
+- Live AI generation depends on API availability
+- Security is only suitable for prototype/demo use
+- State persistence works only in the same browser via localStorage
 
-# Phase 2: Validation System (Weeks 1-2) ⏳
-- [ ] AI quiz generation per module
-- [ ] Quiz UI with multiple choice questions
-- [ ] Scoring and pass/fail logic (70% threshold)
-- [ ] Retry mechanism with easier questions
-- [ ] Detailed feedback on wrong answers
-
-# Phase 3: Progress Tracking (Week 2) ⏳
-- [ ] Progress visualization (charts)
-- [ ] Streak tracking
-- [ ] Module completion history
-- [ ] Time spent analytics
-
-# Phase 4: Backend Migration (Weeks 3) ⏳
-- [ ] Backend API setup
-- [ ] Database schema implementation
-- [ ] JWT authentication
-- [ ] Migrate localStorage to database
-
-# Phase 5: Polish & Deploy (End of week 3. Ready for demo) ⏳
-- [ ] Bug fixes
-- [ ] Mobile optimization
-- [ ] Performance optimization
-- [ ] Documentation
+### Not Started or Deferred
+- Backend migration
+- Database schema
+- Analytics and reporting
+- Production authentication
+- Admin or instructor features
 
 ## Key Design Decisions
+- Frontend-first build: Chosen to ensure a complete working demo within the project timeline
+- localStorage persistence: Used to avoid backend dependency during submission
+- AI fallback mode: Added so roadmap and quiz flows still work even if Gemini is unavailable
+- Sequential unlocking: Implemented to support the main product idea of mastery before progression
+- Separate quiz page: Used to keep weekly validation focused and easy to navigate
 
-# Authentication
-- Choice: localStorage for MVP
-- Rationale: Fast prototyping, no backend setup needed
-- Trade-off: Not production-ready, no cross-device sync
-- Future: Upgrade to backend + JWT
+## Known Limitations
+- Passwords are stored in localStorage and are not secure for real-world use
+- API usage is handled from the frontend, which is not suitable for production security
+- The application is a prototype and does not include a backend or database
+- User progress is tied to one browser/device
+- Some planned roadmap items from the original vision were reduced to meet the submission deadline
 
-# Password Security
-- Requirements: 8+ chars, 1 number, 1 special character
-- Storage: Plaintext in localStorage (DEMO ONLY)
-- Future: bcrypt hashing with backend
+## Final Evaluation
+This submission successfully demonstrates the core concept of SkillForge AI:
+- a learner can sign up,
+- complete onboarding,
+- generate a personalized roadmap,
+- work through weekly tasks,
+- and unlock progress through quiz validation.
 
-# User Flow
-- New users: Signup → Onboarding → Dashboard
-- Returning users: Login → Dashboard (if completed onboarding)
-- Validation: 70% pass rate, retry with easier questions on fail
+The project should be treated as a functional college prototype rather than a production-ready product. The main concept is implemented and demonstrable, while scalability, security, analytics, and backend architecture remain future work.
 
-# Roadmap Structure
-- Duration: 12 weeks per skill
-- Granularity: Weekly modules
-- Unlocking: Sequential (must complete week N to unlock week N+1)
-- Validation: Quiz/coding challenge per module
+## Post-Submission Future Scope
+- Move AI calls to a secure backend
+- Add database-backed user accounts and progress storage
+- Hash passwords and implement proper session handling
+- Add richer analytics and learner insights
+- Improve retry logic and adaptive quiz difficulty
+- Expand roadmap customization and resource quality control
 
-# AI Integration Strategy
-- Phase 1: Hardcoded fake roadmaps (unblocked development)
-- Phase 2: Real API integration when available
-- Architecture: Swappable API layer (easy migration)
-
-# Data Models
-
-# User (localStorage)
-```javascript
-{
-  id: "user_1234567890_abc123",
-  name: "John Doe",
-  email: "john@test.com",
-  password: "plaintext", // Will be hashed with backend
-  createdAt: "2025-03-02T...",
-  hasCompletedOnboarding: false
-}
-```
-
-# Roadmap (localStorage)
-```javascript
-{
-  id: "roadmap_xyz",
-  userId: "user_123",
-  skill: "Python Programming",
-  goal: "Get a job as backend developer",
-  dailyTime: "1-2 hours",
-  level: "Beginner",
-  style: "Mixed (videos + hands-on)",
-  totalWeeks: 12,
-  createdAt: "2025-03-02T...",
-  modules: [...]
-}
-```
-
-# Module
-```javascript
-{
-  weekNumber: 1,
-  title: "Python Basics",
-  isUnlocked: true,
-  isCompleted: false,
-  learningObjectives: ["Understand variables", "Write loops"],
-  topics: ["Variables", "Data types", "Control flow"],
-  resources: [
-    {type: "video", title: "...", link: "..."},
-    {type: "article", title: "...", link: "..."}
-  ],
-  validationType: "quiz",
-  testScore: null,
-  attempts: 0
-}
-```
-
-# Development Guidelines
-
-# Code Style
-- Variables: camelCase, descriptive names
-- Functions: Small, single-purpose, well-named
-- Comments: Explain WHY, with WHAT. Very brief
-- localStorage keys: Prefix with `skillforge_`
-- CSS classes: BEM-like naming (block__element--modifier)
-
-# File Organization
-- One feature per file when possible
-- Group related functions together
-- Extract reusable utilities
-
-# Testing Checklist
-- [ ] Works in Chrome/Edge
-- [ ] Works in Firefox
-- [ ] Mobile responsive (375px, 768px, 1024px)
-- [ ] Works on actual phone (ngrok)
-- [ ] No console errors
-- [ ] localStorage operations succeed
-- [ ] Forms validate properly
-- [ ] Error messages clear and helpful
-
-# Known Issues & Technical Debt
-# Current Issues
-- ❌ Gemini API blocked (suspicious activity)
-- ⚠️ Tailwind CDN warning (acceptable for demo)
-- ⚠️ Passwords stored in plaintext (will fix with backend)
-
-# Technical Debt
-- High Priority (Before Demo)
-  - [ ] Add proper error logging
-  - [ ] Implement loading states for all async operations
-  - [ ] Add input sanitization
-
-- Medium Priority (Before Submission)
-  - [ ] Replace Tailwind CDN with installed version
-  - [ ] Hash passwords (backend implementation)
-  - [ ] Add session expiration
-
-- Low Priority (Nice to Have)
-  - [ ] Dark mode toggle
-  - [ ] Keyboard shortcuts
-  - [ ] Offline support
-
-# API Integration Notes
-
-# Gemini API
-- Status: Blocked (suspicious activity error)
-- Retry: Wait 24-48 hours
-- Key Location: Will be in `.env` file (not committed)
-
-# Groq API (Backup)
-- Model: llama-3.1-70b-versatile
-- Endpoint: https://api.groq.com/openai/v1/chat/completions
-- Status: Ready to use if Gemini fails
-- Key: To be obtained from console.groq.com
-
-# Fallback Strategy
-- Hardcoded realistic roadmap data
-- Allows development to continue
-- Easy to swap for real API later
-
-# Success Criteria
-
-# Minimum Viable Product (Demo Day)
-- ✅ Working authentication
-- ✅ Onboarding flow collects all inputs
-- ✅ Roadmap generation (AI or fake data)
-- ✅ Dashboard shows modules
-- ✅ Progressive unlocking works
-- ✅ At least one quiz works
-- ✅ Mobile responsive
-- ✅ Deployed and accessible for now with free hosting with backend compatibility
-
-# Ideal Complete Product !!! The real goal !!!
-- All of MVP +
-- Real AI integration
-- Backend with database
-- Full validation system
-- Progress analytics
-- Polished UI/UX
-
-# Resources & References
-
-# Documentation
-- localStorage API: MDN Web Docs
-- Gemini API: ai.google.dev/gemini-api/docs
-- Groq API: console.groq.com/docs
-
-# Inspiration
-- Roadmap.sh (visual roadmaps)
-- Duolingo (gamified learning, progressive unlocking)
-- Khan Academy (skill mastery approach)
-- freecodecamp.org (self learning free courses)
-
-# Contact & Notes
-
-# Project Owner
+## Project Owner
 - Name: Parth Khadke
 - College: Sri Brijlal Biyani Science College
 - Course: BCA Final Semester
 - Email: parthkhadke720@gmail.com
 
-
-# Notes for Future Reference
-- This is a college project, not production software yet.
-- Focus on demonstrating core concept, not perfection
-- AI assistance used for code generation (documented)
-- Prioritize working demo over advanced features.
+## Submission Note
+This document reflects the final state of the repository at the project deadline. The project is being submitted in its current implemented form without additional planned changes before evaluation.
