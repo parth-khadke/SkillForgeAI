@@ -4,7 +4,7 @@
 // Both paths return stable object shapes.
 // =================================
 
-const GEMINI_API_KEY = 'AIzaSyD9fVF7-hxPmrzQP_FYmM6r_oU8-rXebKA';
+const GEMINI_API_KEY = 'AQ.Ab8RN6ILPcdaNhUztbuZe9ZmDNhLqrVmIIfnCkR5Mdji_JPrsA';
 const ROADMAP_WEEKS = 12;
 const QUIZ_QUESTION_COUNT = 5;
 const DEFAULT_RESOURCE_TYPES = ['youtube', 'article', 'book', 'course', 'project'];
@@ -210,7 +210,7 @@ async function callGeminiRoadmapAPI(input) {
   );
 
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -246,7 +246,7 @@ async function callGeminiQuizAPI(input, module) {
   const responseJsonSchema = buildQuizResponseSchema();
 
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
